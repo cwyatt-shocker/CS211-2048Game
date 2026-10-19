@@ -3,7 +3,6 @@
 #include <iomanip>
 using namespace std;
 
-//yet another edit
 
 void move_left(int board[][5], int numrows = 5)
 {
