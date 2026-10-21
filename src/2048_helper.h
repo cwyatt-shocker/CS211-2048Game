@@ -7,6 +7,10 @@ using namespace std;
 void move_left(int board[][5], int numrows = 5)
 {
 	//CODE HERE
+
+	/*
+	when moving left, iterate through the board and look for if there are 2 matching types next to each other. if there are, double the value of the leftmost one, and shift all other tiles over.
+	*/
 }
 
 void move_right(int board[][5], int numrows = 5)
