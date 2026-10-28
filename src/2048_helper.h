@@ -4,36 +4,39 @@
 using namespace std;
 
 
-void move_left(int board[][5], int numrows = 5)
+void move_left(int board[][5], int board_size = 5)
 {
 	//CODE HERE
 
 	/*
 	when moving left, iterate through the board and look for if there are 2 matching types next to each other. if there are, double the value of the leftmost one, and shift all other tiles over.
 	*/
+	for(int i=0; i<board_size; i++){
+		;
+	}
 }
 
-void move_right(int board[][5], int numrows = 5)
+void move_right(int board[][5], int board_size = 5)
 {
 	//CODE HERE
 }
 
-void move_up(int board[][5], int numrows = 5)
+void move_up(int board[][5], int board_size = 5)
 {
 	//CODE HERE
 }
 
-void move_down(int board[][5], int numrows = 5)
+void move_down(int board[][5], int board_size = 5)
 {
 	//CODE HERE
 }
 
 
-void print_board(int board[][5], int numrows = 5)
+void print_board(int board[][5], int board_size = 5)
 {
 	cout << endl << "\t-----------------------------------------" << endl;
 
-	for (int r = 0; r < numrows; r++)
+	for (int r = 0; r < board_size; r++)
 	{
 		for (int c = 0; c < 5; c++)
 		{
@@ -52,12 +55,12 @@ void print_board(int board[][5], int numrows = 5)
 }
 
 
-void insert_random(int board[][5], int numrows = 5)
+void insert_random(int board[][5], int board_size = 5)
 {
 	int r, c;
 	//count empty
 	int empty_count = 0;
-	for (int r = 0; r < numrows; r++)
+	for (int r = 0; r < board_size; r++)
 	{
 		for (int c = 0; c < 5; c++)
 		{
@@ -71,8 +74,8 @@ void insert_random(int board[][5], int numrows = 5)
 		while (true)
 		{
 			//generate random location r, c
-			r = rand() % numrows;
-			c = rand() % numrows;
+			r = rand() % board_size;
+			c = rand() % board_size;
 			//check if empty
 			if (board[r][c] == 0)
 			{
