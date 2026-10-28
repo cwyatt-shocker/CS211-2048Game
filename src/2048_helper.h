@@ -3,6 +3,8 @@
 #include <iomanip>
 using namespace std;
 
+const int board_size = 5;
+
 
 void move_left(int board[][5], int board_size = 5)
 {
@@ -11,9 +13,31 @@ void move_left(int board[][5], int board_size = 5)
 	/*
 	when moving left, iterate through the board and look for if there are 2 matching types next to each other. if there are, double the value of the leftmost one, and shift all other tiles over.
 	*/
-	for(int i=0; i<board_size; i++){
-		;
-	}
+	//Iterating through each row.
+	for(int row=0;row<board_size;row++){
+		//Iterating through each column, except the last one
+		for(int col=0; col<board_size-1; col++){
+			//Checks for if there is another element with the same value to the right of the current value
+			if((board[row][col] == board[row][col+1]) && board[row][col] != 0){
+				//Double the current value, empty the cell to the right of the current space
+				board[row][col] *= 2;
+				board[row][col+1] = 0;
+			}
+
+			//Shifting everything to the left
+
+			//If the current cell is empty, look forward in the array for a cell to move over.
+			if(board[row][col] == 0){
+				//Checking future cells.
+				for(int i = col; i < board_size; i++)
+					if(board[row][i] !=0){
+						board[row][col] = board[row][i];
+						board[row][i] = 0;
+						break;//this should only exit the for loop, right??
+					}
+			}
+		}
+	}	
 }
 
 void move_right(int board[][5], int board_size = 5)
