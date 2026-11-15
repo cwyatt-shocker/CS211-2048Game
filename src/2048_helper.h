@@ -1,6 +1,3 @@
-#ifndef HELPER_2048_H
-#define HELPER_2048_H
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -369,5 +366,3 @@ inline bool load_game(int board[][5], long long &score, long long &moves, int bo
 	cout << "Game loaded from savegame.txt.\n";
 	return true;
 }
-
-#endif
